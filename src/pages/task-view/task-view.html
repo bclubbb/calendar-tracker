@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Task Title</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  >
+  <ion-list>
+      <ion-list-header>
+          Task Details
+        </ion-list-header>
+
+        <button ion-item>
+            <ion-icon name="clipboard" item-start ></ion-icon>
+            <ion-label>Task</ion-label>
+            <ion-note item-end>{{task.title}}</ion-note>
+          </button>
+          <button ion-item>
+              <ion-icon name="information" item-start ></ion-icon>
+              <ion-label>Description</ion-label>
+              <ion-note item-end>{{task.description}}</ion-note>
+            </button>
+
+        <button ion-item>
+            <ion-icon name="calendar" item-start ></ion-icon>
+            <ion-label>Due Date</ion-label>
+            <ion-note item-end>{{task.duedate}} </ion-note>
+          </button>
+
+        <button ion-item>
+            <ion-icon name="clock" item-start ></ion-icon>
+            <ion-label>Due Time</ion-label>
+            <ion-note item-end>{{task.duetime}}</ion-note>
+          </button>
+
+        <button ion-item>
+            <ion-icon name="list" item-start ></ion-icon>
+            <ion-label>Initiative</ion-label>
+            <ion-note item-end> {{task.initiative}}</ion-note>
+          </button>
+
+
+<!--
+    <button ion-item>
+        <ion-label>Category</ion-label>
+        <ion-note item-end>Music - Djing</ion-note>
+      </button>
+    <ion-item>
+      <ion-label>Color</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Icon</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+      <button ion-item>
+          <ion-label>Linked To</ion-label>
+          <ion-note item-end>Play More Gigs</ion-note>
+        </button> -->
+    <ion-list-header>
+        Progress
+      </ion-list-header>
+      <ion-item>
+          <ion-label>Time Spent</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <!-- <button ion-button full color="primary" (click)="taskComplete">Mark as Done</button> -->
+        <button ion-button full color="primary" >Mark as Done</button>
+
+  </ion-list>
+
+</ion-content>

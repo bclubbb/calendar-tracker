@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="createActivity()"><ion-icon name="book"></ion-icon></button>
+        </ion-buttons>
+    <ion-title>{{pages[selectedTab].title}} </ion-title>
+
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="createTask()"><ion-icon name="calendar"></ion-icon></button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+  <super-tabs tabsPlacement="top" toolbarBackground="primary" toolbarColor="light" indicatorColor="light"
+  (tabSelect)="onTabSelect($event)">
+    <!-- <super-tab *ngFor="let page of pages" [root]="page.pageName" [icon]="page.icon" [id]="page.id" [title]="page.title"> -->
+    <super-tab *ngFor="let page of pages" [root]="page.pageName"  [id]="page.id" [title]="page.title">
+
+    </super-tab>
+  </super-tabs>
+
+</ion-content>
+

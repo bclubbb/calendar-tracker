@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.timer {
+  &__display {
+    display: flex;
+  }
+
+}

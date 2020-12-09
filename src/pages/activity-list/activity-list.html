@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let activity of activities | async">
+      <!-- <ion-item (click)="viewactivity(activity)"> -->
+      <ion-item>
+        <h1>{{ activity.name }}</h1>
+        <p>{{ activity.description }}</p>
+        <h2>{{ activity.duedate | date:'EEE, d LLL'}} </h2>
+        <h3>{{ activity.duetime }}</h3>
+        <!-- <button ion-button color="primary" >
+                <ion-icon name="checkbox"></ion-icon>
+              </button> -->
+        <!-- <timer #countdownTimer [timeInSeconds]="2700"></timer> -->
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="editActivity(activity)">
+          <ion-icon name="information"></ion-icon>
+        </button>
+
+
+      </ion-item-options>
+      <!-- <button ion-button  (press)="viewActivityLog(activity)">
+            </button> -->
+      <ion-item-options side="right">
+        <button ion-button large color="primary" (click)="viewActivityLog(activity)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <!-- <button ion-button large color="primary" (click)="viewActivityDetails(activity)">
+          <ion-icon name="create"></ion-icon>
+        </button> -->
+        <!-- <button ion-button color="danger" (click)="removeActivityLog(activity.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button> -->
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

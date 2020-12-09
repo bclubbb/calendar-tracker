@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add New Task</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label>Task Title</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Task Description</ion-label>
+        <ion-input type="text" formControlName="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Due Date </ion-label>
+        <ion-datetime displayFormat="D MMM YY" pickerFormat="DD/MM/YYYY " formControlName="duedate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Due Time</ion-label>
+        <ion-datetime displayFormat="H:mm" pickerFormat="H mm" formControlName="duetime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select>
+          <ion-option value="Add">Add New</ion-option>
+          <ion-option value="Uncategorized">Uncategorized</ion-option>
+          <ion-option value="Body">Body</ion-option>
+          <ion-option value="Mind">Mind</ion-option>
+          <ion-option value="Sleep">Sleep</ion-option>
+          <ion-option value="Errands">Errands</ion-option>
+          <ion-option value="Planning and Organizing">Planning and Organizing</ion-option>
+          <ion-option value="Games and Netflix">Games and Netflix</ion-option>
+          <ion-option value="Music - Making">Music - Making</ion-option>
+          <ion-option value="Music - Djing">Music - Djing</ion-option>
+          <ion-option value="Subdivisions">Subdivisions</ion-option>
+          <ion-option value="Learning">Learning</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Color</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Icon</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Linked To</ion-label>
+        <!-- <ion-select>
+              <ion-option value="Add">Add New</ion-option>
+              <ion-option value="Subdivisions">Subdivisions</ion-option>
+              <ion-option value="Learning">Learning</ion-option>
+            </ion-select> -->
+      </ion-item>
+
+
+    </ion-list>
+
+    <button ion-button full color="secondary" type="submit" (click)="onSubmit()">
+      <ion-icon name="add"></ion-icon> Add Task
+    </button>
+    <!-- [(ngModel)]="newItem" -->
+  </form>
+
+</ion-content>

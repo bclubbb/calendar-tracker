@@ -1,0 +1,125 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add New Activity</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Color</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Icon</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Group</ion-label>
+        <!-- <ion-select>
+                      <ion-option value="Add">Add New</ion-option>
+                      <ion-option value="Subdivisions">Subdivisions</ion-option>
+                      <ion-option value="Learning">Learning</ion-option>
+                    </ion-select> -->
+      </ion-item>
+
+      <ion-item-divider color="dark">Target / Goals</ion-item-divider>
+
+      <ion-list class="ion-list">
+        <ion-item>
+          <ion-label>How are you Tracking it?</ion-label>
+          <ion-select  formControlName="targetMeasuringhow">
+            <ion-option value="timescompleted">Times Completed</ion-option>
+            <ion-option value="hoursdone">Hours Done</ion-option>
+            <ion-option value="both">Both</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <!-- <div *ngIf="targetMeasuringhow === 'timescompleted'"> -->
+        <ion-item>
+          <ion-label> Times</ion-label>
+          <ion-input type="number" formControlName="amountTargetNumber"></ion-input>
+        </ion-item>
+          <ion-list >
+            <ion-item>
+              <ion-label>Time Frame</ion-label>
+              <ion-select formControlName="amountTargetTimeframe">
+                <ion-option value="perday">Per day</ion-option>
+                <ion-option value="perweek">Per Week</ion-option>
+                <ion-option value="permonth">Per Month</ion-option>
+                <ion-option value="perquarter">Per Quarter</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      <!-- </div> -->
+      <!-- <div *ngIf="targetMeasuringhow === 'hoursdone | both'"> -->
+        <ion-item>
+          <ion-label> Amount of Time</ion-label>
+          <ion-input type="number" formControlName="timeTargetNumber"></ion-input>
+        </ion-item>
+        <ion-list class="ion-list">
+            <ion-item>
+              <ion-label>Time Unit</ion-label>
+              <ion-select formControlName="timeTargetUnit">
+                <ion-option value="minutes">Minutes</ion-option>
+                <ion-option value="hours">Hours</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <ion-list class="ion-list">
+            <ion-item>
+              <ion-label>Time Frame Per</ion-label>
+              <ion-select formControlName="timeTargetTimeframe">
+                <ion-option value="pertime">Time Completed</ion-option>
+                <ion-option value="perday">Day</ion-option>
+                <ion-option value="perweek">Week</ion-option>
+                <ion-option value="permonth">Month</ion-option>
+                <ion-option value="perquarter">Quarter</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      <!-- </div> -->
+
+            <!-- <ion-item>
+        <ion-label> Active</ion-label>
+        <ion-toggle checked="false"></ion-toggle>
+      </ion-item> -->
+
+
+      <!-- <ion-item>
+        <ion-label>Due Date </ion-label>
+        <ion-datetime displayFormat="D MMM YY" pickerFormat="DD/MM/YYYY " formControlName="duedate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Due Time</ion-label>
+        <ion-datetime displayFormat="H:mm" pickerFormat="H mm" formControlName="duetime"></ion-datetime>
+      </ion-item>
+ -->
+
+
+
+
+    </ion-list>
+
+    <button ion-button full color="secondary" type="submit" (click)="onSubmit()">
+      <ion-icon name="add"></ion-icon> Add Activity
+    </button>
+    <!-- [(ngModel)]="newItem" -->
+  </form>
+
+</ion-content>

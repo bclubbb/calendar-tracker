@@ -1,0 +1,58 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Your Tasks</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let task of tasks | async">
+      <!-- <ion-item (click)="viewTask(task)"> -->
+      <ion-item >
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.description }}</p>
+        <h2>{{ task.duedate | date:'EEE, d LLL'}} </h2>
+        <h3>{{ task.duetime }}</h3>
+        <button ion-button color="primary" >
+            <ion-icon name="checkbox"></ion-icon>
+          </button>
+          <timer #countdownTimer [timeInSeconds]="2700"></timer>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="editTask(task)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="removeTask(task.key)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+          <button ion-button large color="primary" (click)="viewTask(task)">
+              <ion-icon name="information"></ion-icon>
+            </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- <ion-card>
+    <h2>Countdown Timer</h2>
+	<timer #countdownTimer [timeInSeconds]="2700"></timer>
+	<timer-progress #countdownTimerProgress [timeInSeconds]="2700"></timer-progress>
+  </ion-card> -->
+
+
+
+
+  <!-- <ion-fab bottom right padding>
+    <button ion-fab color="primary" (click)="createTask()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab> -->
+
+</ion-content>
